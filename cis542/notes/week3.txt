@@ -1,0 +1,17 @@
+useful library functions 
+argc takes command line arguuments char *argv[]
+
+
+
+logs are usuaally kept in /var/log/syslog 
+
+tail -f /var/log/syslog 
+
+when looking at a large file can look at tail -n 100 
+
+/proc/cpuinfo  or /proc/meminfo 
+
+dmesg gives kernel info 
+
+un sorted list takes 0^n  if you have a sorted list you jump in the middle and compare value to left and right give sus log2 (n) 
+
