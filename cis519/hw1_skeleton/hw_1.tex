@@ -1,0 +1,87 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+
+\title{CIS 519 Problem Set 1}
+
+\author{Gabrielle Merritt}
+
+\date{\today}
+
+\begin{document}
+\maketitle
+\section{Decision Tree Learning}
+\subsection{Information Gain} 
+At root node for a decision tree in this domain, what are the information gains associated with the Outlook and Humidity attributes? (Use a threshold of 75 for humidity). Be sure to show computations.
+
+\paragraph{Solution:}
+Entropy $S$ of the root node can be represented as:
+$$S = -(\frac{5}{14}\log_2{\frac{5}{14}})- (\frac{9}{14}\log_2{\frac{9}{14}}) = .940 $$
+
+For Humidity the weighted average entropy of the children $\leq 75 and >75$  
+$$\bar{S_h} = \frac{5}{14}[-(\frac{1}{5}\log_2{\frac{1}{5}})- (\frac{4}{5}\log_2{\frac{4}{5}})] + \frac{9}{14}[-(\frac{4}{9}\log_2{\frac{4}{9}})- (\frac{5}{9}\log_2{\frac{5}{9}})]= .541
+$$
+For Outlook the average entropy of children Sunny,Overcast, and Rain 
+$$\bar{S_o} = \frac{5}{14}[-(\frac{3}{5}\log_2{\frac{3}{5}})- (\frac{2}{5}\log_2{\frac{2}{5}})] + \frac{4}{14}[-(\frac{0}{4}\log_2{\frac{0}{4}})- (\frac{4}{4}\log_2{\frac{4}{4}})] + \frac{5}{14}[-(\frac{2}{5}\log_2{\frac{2}{5}})- (\frac{3}{5}\log_2{\frac{3}{5}})] = .6936
+$$
+
+Information gain $I$ can be computed as 
+$$I_g = S - \bar{S_c}
+$$
+Therefore Information gain for Humidity ($I_h$) and Outlook($I_o$) are:
+
+$$I_h = S - \bar{S}_h = .399
+$$
+$$I_o = S -\bar{S}_o =.246$$
+
+\subsection{Gain Ratios}
+Again at the root node, what are the gain ratios associated with the Outlook and Humidity
+attributes (using the same threshold as in (a))? 
+Be sure to show your computations.
+\paragraph{Solution:}
+Gain Ratio ($GainRatio(S,A)$) is defined as
+$$ GainRatio(S,A) = \frac{Gain(S,A)}{SplitInfo(S,A)}
+$$ 
+
+$$ GainRatio(S,Humidity) = \frac{I_h}{-\frac{5}{14}\log_2\frac{5}{14} - \frac{9}{14}\log_2\frac{9}{14}} = .424
+$$
+
+$$ GainRatio(S,Outlook) = \frac{I_o}{-\frac{5}{14}\log_2\frac{5}{14} - \frac{4}{14}\log_2\frac{4}{14} - \frac{5}{14}\log_2\frac{5}{14}} = .156
+$$
+
+\subsection {Decision Tree} 
+Draw the complete (unpruned) decision tree, showing the class predictions at the leaves. 
+
+
+\section{Linear Regression and kNN}
+
+Suppose we have a sample of n pairs $(x_i; y_i)$ drawn i.i.d. from the following
+distribution:
+\newline
+$x_i\in X$,the set of instances
+\newline 
+$y_i = f(x_i) + \epsilon_i$,where $f()$ is the regression function
+\newline 
+$\epsilon_i \sim G(0,\sigma^2)$,a Gaussian with mean 0 and variance 2
+\newline 
+We can construct an estimator for $f()$ that is linear in the $y_i$,
+
+$$f(x_0) =\displaystyle\sum\limits_{i=1}^n l_i(x_0; X)y_i,
+$$
+
+where the weights $l_i(x_0;X)$ do not depend on the $y_i$, but do depend on the entire training set $X$. Show that
+both linear regression and k-nearest neighbour regression are members of this class of estimators. 
+\newline 
+Explicitly describe the weights $l_i(x_0;X)$ for each of these algorithms.
+
+\paragraph {Solution:}
+
+
+
+
+
+\end{document}
