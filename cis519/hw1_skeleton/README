@@ -24,13 +24,13 @@
 #######################################################################################
 
 # Personal information
-FIRSTNAME: Eric
-LASTNAME:  Eaton
-PENNKEY:   eeaton
-PENNID:    123456
+FIRSTNAME: Gabrielle
+LASTNAME:  Merritt
+PENNKEY:   gmerritt
+PENNID:    40102484
 
 # Which course are you enrolled in?  (enter 419 or 519)
-COURSE:  419 
+COURSE:  519 
 
 
 # List all sources of help that you consulted while completing this assignment 
@@ -43,8 +43,8 @@ COURSE:  419
 
 SOURCESCONSULTED: |
     While completing the assignment, I consulted the following sources: 
-    Chapter 2 of Pattern Recognition and Machine Learning by C. Bishop
-    Chapter 5 of Machine Learning, A Probabilistic Perspective by K. Murphy
+    Asked roommate about x_0, realized it was a vector and not a single value of 
+    x at 0   	
 
 
  
@@ -55,16 +55,16 @@ SOURCESCONSULTED: |
 #######################################################################################
 
 # Problem 1a: information gain for the outlook attribute  (only your final answer)
-DT_INFO_GAIN_OUTLOOK: 123.45
+DT_INFO_GAIN_OUTLOOK: .246
 
 # Problem 1a: information gain for the humidity attribute  (only your final answer)
-DT_INFO_GAIN_HUMIDITY: 123.45
+DT_INFO_GAIN_HUMIDITY: .399
 
 # Problem 1b: gain ratio for the outlook attribute  (only your final answer)
-DT_GAIN_RATIO_OUTLOOK: 123.45
+DT_GAIN_RATIO_OUTLOOK: .156
 
 # Problem 1b: gain ratio for the humidity attribute  (only your final answer)
-DT_GAIN_RATIO_HUMIDITY: 123.45
+DT_GAIN_RATIO_HUMIDITY: .424
 
 
 
@@ -75,7 +75,7 @@ DT_GAIN_RATIO_HUMIDITY: 123.45
 # Copy and paste your one-line matrix equation for computing the closed form solution
 # to linear regression (e.g., Line 171 of test_linreg_univariate.py or Line 51 of 
 # test_linreg_multivariate.py)
-LINREGIMPLEMENTATION_CLOSEDFORM: thetaClosedForm = 0
+LINREGIMPLEMENTATION_CLOSEDFORM: thetaClosedForm = linalg.inv((X.T*X))*X.T*y 
 
 
 
@@ -118,7 +118,7 @@ SHOWDOWN_LOGREG_TEST_ACCURACY_STDDEV: 123.45
 #######################################################################################
 
 # Approximately how many hours did it take you to complete this assignment?
-FEEDBACK_NUM_HOURS: 0
+FEEDBACK_NUM_HOURS: 15
 
 # Please list any typos / errors you noticed in the assignment description or skeleton code
 FEEDBACK_ERRORS: |

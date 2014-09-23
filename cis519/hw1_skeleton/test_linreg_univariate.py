@@ -52,12 +52,14 @@ def plotRegLine1D( lr_model, X, y):
         y - n*1 matrix or vector of length n
         lr_model - linear regression trained model
     '''
-    plotData1D(X[:,1], y, to_block =False)
+    plotData1D(X[:,1], y, to_block = False)
     plt.hold(True)
     plt.plot(X[:,1],X*lr_model.theta,'b-', label='Regression Line')
     plt.legend(loc='lower right')
     plt.hold(False)
     plt.show()
+    plt.draw()
+
 
 
 def visualizeObjective(lr_model,t1_vals,t2_vals, X, y):
@@ -168,7 +170,7 @@ if __name__ == "__main__":
     visualizeObjective(lr_model,theta1_vals, theta2_vals, X, y)
 
     # Compute the closed form solution in one line of code
-    theta_closed_form = 0  # TODO:  replace "0" with closed form solution
+    theta_closed_form = linalg.inv((X.T*X))*X.T*y  # TODO:  replace "0" with closed form solution
     print "theta_closed_form: ", theta_closed_form
     
 

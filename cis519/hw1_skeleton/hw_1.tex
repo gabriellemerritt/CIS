@@ -1,5 +1,4 @@
 \documentclass{article}
-
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
@@ -14,6 +13,7 @@
 
 \begin{document}
 \maketitle
+\part{Problem Set}
 \section{Decision Tree Learning}
 \subsection{Information Gain} 
 At root node for a decision tree in this domain, what are the information gains associated with the Outlook and Humidity attributes? (Use a threshold of 75 for humidity). Be sure to show computations.
@@ -70,7 +70,7 @@ $\epsilon_i \sim G(0,\sigma^2)$,a Gaussian with mean 0 and variance 2
 \newline 
 We can construct an estimator for $f()$ that is linear in the $y_i$,
 
-$$f(x_0) =\displaystyle\sum\limits_{i=1}^n l_i(x_0; X)y_i,
+$$f(x_0) =\displaystyle\sum\limits_{i=1}^n l_i(x_0; X)y_i
 $$
 
 where the weights $l_i(x_0;X)$ do not depend on the $y_i$, but do depend on the entire training set $X$. Show that
@@ -79,6 +79,42 @@ both linear regression and k-nearest neighbour regression are members of this cl
 Explicitly describe the weights $l_i(x_0;X)$ for each of these algorithms.
 
 \paragraph {Solution:}
+k-NN can be represented as the equation 
+$$f(x_0) = \frac{1}{K} \displaystyle\sum\limits_{i =1}^K y_i
+$$
+Which we can deduce that $l_i (x_0; X)  = 1/K$ which k depends on the number of nearest neighbours 
+\newline
+For general closed form solution for linear regression
+\newline  
+ $ f(X) = X\theta  $  where $ \theta = (X^TX)^{-1}XY $
+ $$f(X_0) =[\begin{matrix} 1 & x_0 \end{matrix} ][(X^TX)^{-1}XY]$$ 
+ So we can say that 
+ $$l_i(X_0;X) = [\begin{matrix} 1 & x_0 \end{matrix} ] (X^TX)^{-1}X $$ 
+ Which shows that the weight $l_i(x_0;X)$ is not dependent on $y_i$ 
+ 
+ \section{Decision Trees and Linear Discriminants}
+ Describe in detail how to modify a classic decision tree algorithm (ID3 / C4.5) to obtain oblique splits (i.e,
+splits that are not parallel to an axis).
+
+\part{Programming Exercises Analysis}
+\section {Linear Regression} 
+\section {Logistic Regression}
+For my varied values of lambda I noticed that the larger lambda became the faster $||\theta -\theta_old||^{2}_2 \leq \epsilon$, and in cases for large lambdas ,the worse the classifier worked.
+\linebreak
+\includegraphics[width = \linewidth]{Lambda10.png}
+
+\paragraph{}
+For small values of lambda the slower the gradient decent, without much gain  
+\linebreak
+\includegraphics[width = \linewidth]{Lambda_001.png}
+\linebreak
+the figure above is for $ \lambda = .001$ 
+\paragraph{}
+\includegraphics[width = \linewidth]{Lambda_000001.png}
+the figure above is for $ \lambda = .000001$ 
+
+ 
+
 
 
 

@@ -1,0 +1,8 @@
+            #h_theta = 0
+            # TODO:  add update equation here    n x d  [n,d]
+          
+            # for k in xrange(n):
+         
+            # 	for j in xrange(d):
+	           #  	h_theta =  X[k,:] * theta
+	           #  	theta[j] = theta[j] - ((self.alpha/(self.n_iter))*((h_theta - y[k])*X[k,j]))

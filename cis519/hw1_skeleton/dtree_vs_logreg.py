@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 
 from sklearn import tree
 from sklearn.metrics import accuracy_score
+from logreg import LogisticRegression 
 
 
 
@@ -79,3 +80,4 @@ if __name__ == "__main__":
     print "Decision Tree Accuracy = ", stats[0,0], " (", stats[0,1], ")"
     print "Logistic Reg. Accuracy = ", stats[1,0], " (", stats[1,1], ")"
 # ...to HERE.
+

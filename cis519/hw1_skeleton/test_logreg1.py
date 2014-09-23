@@ -24,7 +24,7 @@ if __name__ == "__main__":
     X = (X - mean) / std
     
     # train logistic regression
-    logregModel = LogisticRegression(regLambda = 0.00000001)
+    logregModel = LogisticRegression(regLambda = .000001)
     logregModel.fit(X,y)
     
     # Plot the decision boundary
@@ -45,6 +45,7 @@ if __name__ == "__main__":
     # Configure the plot display
     plt.xlabel('Exam 1 Score')
     plt.ylabel('Exam 2 Score')
+    plt.title("Lambda =  .000001")
 
     plt.xlim(xx.min(), xx.max())
     plt.ylim(yy.min(), yy.max())
