@@ -86,7 +86,10 @@ LINREGIMPLEMENTATION_CLOSEDFORM: thetaClosedForm = linalg.inv((X.T*X))*X.T*y
 # Copy and paste your brief paragraph describing the effect of the regularization 
 # parameter from your PDF.
 LOGREGIMPLEMENTATION_REGULARIZATION_ANALYSIS:
- As I increased the value of lambda, I observed that...
+ For my varied values of lambda I noticed that the larger lambda became the faster old  
+ theta and new theta converged, and in cases for large lambdas ,the worse the  
+ classifier worked. For small values of lambda the slower the gradient decent, without 
+ much gain.  
  
  
  
@@ -97,16 +100,16 @@ LOGREGIMPLEMENTATION_REGULARIZATION_ANALYSIS:
 #######################################################################################
 
 # What was the mean of the decision tree's accuracies?  (only your final answer)
-SHOWDOWN_DT_TEST_ACCURACY_MEAN: 123.45
+SHOWDOWN_DT_TEST_ACCURACY_MEAN: .7334
 
 # What was the standard deviation of the decision tree's accuracies?  (only your final answer)
-SHOWDOWN_DT_TEST_ACCURACY_STDDEV: 123.45
+SHOWDOWN_DT_TEST_ACCURACY_STDDEV: .2086
 
 # What was the mean of logistic regression's accuracies?  (only your final answer)
-SHOWDOWN_LOGREG_TEST_ACCURACY_MEAN: 123.45
+SHOWDOWN_LOGREG_TEST_ACCURACY_MEAN: .6584
 
 # What was the standard deviation of logistic regression's accuracies?  (only your final answer)
-SHOWDOWN_LOGREG_TEST_ACCURACY_STDDEV: 123.45
+SHOWDOWN_LOGREG_TEST_ACCURACY_STDDEV: .1873
  
  
  
@@ -126,4 +129,5 @@ FEEDBACK_ERRORS: |
  
 # Please describe any problems you encountered while completing this assignment
 FEEDBACK_PROBLEMS: |
-    None
+    I had a lot of problems dealing with arrays and matrices and what python returns. Also                       
+    the plotting errors set me back for awhile until I checked Piazza.

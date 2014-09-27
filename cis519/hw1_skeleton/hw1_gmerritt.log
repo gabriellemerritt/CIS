@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  25 SEP 2014 23:32
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  26 SEP 2014 21:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**hw_1.tex
-(./hw_1.tex
+**hw1_gmerritt.tex
+(./hw1_gmerritt.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
 rman-x-2009-06-19, ngerman-x-2009-06-19, afrikaans, ancientgreek, ibycus, arabi
@@ -658,8 +658,9 @@ LaTeX Info: Redefining \addtolength on input line 77.
 \calc@Cskip=\skip48
 )
 \c@@todonotes@numberoftodonotes=\count124
-) (./hw_1.aux)
-\openout1 = `hw_1.aux'.
+)
+(./hw1_gmerritt.aux)
+\openout1 = `hw1_gmerritt.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
 LaTeX Font Info:    ... okay on input line 14.
@@ -760,54 +761,61 @@ Overfull \hbox (32.18523pt too wide) in paragraph at lines 57--59
 File: Lambda10.png Graphic file (type png)
 
 <use Lambda10.png>
-Package pdftex.def Info: Lambda10.png used on input line 105.
+Package pdftex.def Info: Lambda10.png used on input line 106.
 (pdftex.def)             Requested size: 345.0pt x 258.76468pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 103--106
-\OT1/cmr/m/n/10 worked.
+Underfull \hbox (badness 10000) in paragraph at lines 104--107
+\OT1/cmr/m/n/10 worked, and hte longer it took to run
  []
 
 [3] <Lambda_001.png, id=30, 289.08pt x 216.81pt>
 File: Lambda_001.png Graphic file (type png)
  <use Lambda_001.png>
-Package pdftex.def Info: Lambda_001.png used on input line 110.
+Package pdftex.def Info: Lambda_001.png used on input line 111.
 (pdftex.def)             Requested size: 345.0pt x 258.76468pt.
  [4 <./Lambda10.png>] <Lambda_000001.png, id=35, 289.08pt x 216.81pt>
 File: Lambda_000001.png Graphic file (type png)
 
 <use Lambda_000001.png>
-Package pdftex.def Info: Lambda_000001.png used on input line 114.
+Package pdftex.def Info: Lambda_000001.png used on input line 115.
 (pdftex.def)             Requested size: 345.0pt x 258.76468pt.
 
-Overfull \hbox (10.00002pt too wide) in paragraph at lines 114--116
+Overfull \hbox (10.00002pt too wide) in paragraph at lines 115--117
  [] []
  []
 
-[5 <./Lambda_001.png>] [6 <./Lambda_000001.png>] (./hw_1.aux) ) 
+[5 <./Lambda_001.png>] <learningcurve.png, id=40, 578.16pt x 433.62pt>
+File: learningcurve.png Graphic file (type png)
+
+<use learningcurve.png>
+Package pdftex.def Info: learningcurve.png used on input line 122.
+(pdftex.def)             Requested size: 345.0pt x 258.74484pt.
+ [6 <./Lambda_000001.png>] [7 <./learningcurve.png>]
+(./hw1_gmerritt.aux) ) 
 Here is how much of TeX's memory you used:
- 11315 strings out of 493633
- 208759 string characters out of 3143378
+ 11320 strings out of 493633
+ 208935 string characters out of 3143378
  256668 words of memory out of 3000000
- 14365 multiletter control sequences out of 15000+200000
+ 14369 multiletter control sequences out of 15000+200000
  9330 words of font info for 34 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 63i,6n,57p,416b,189s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texl
-ive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texli
-ve/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texliv
-e/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive
-/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/
-2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/20
-11/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2011
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2011/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2011/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2011/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2011/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on hw_1.pdf (6 pages, 237770 bytes).
+ 63i,6n,57p,424b,189s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/local/texlive/2011/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmbx10.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmbx12.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmex10.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi10.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi7.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr10.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr12.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr17.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r7.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
+0.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.
+pfb>
+Output written on hw1_gmerritt.pdf (7 pages, 262249 bytes).
 PDF statistics:
- 79 PDF objects out of 1000 (max. 8388607)
- 51 compressed objects within 1 object stream
+ 86 PDF objects out of 1000 (max. 8388607)
+ 55 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 33 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 38 words of extra memory for PDF output out of 10000 (max. 10000000)
 

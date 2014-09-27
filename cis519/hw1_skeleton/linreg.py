@@ -57,9 +57,10 @@ class LinearRegression:
 			  ** make certain you don't return a matrix with just one value! **
 		'''
 		# TODO: add objective (cost) equation here
+		n,d = X.shape
 		h_theta = X * theta
 
-		cost = np.divide(1.0, (2.0 * self.n_iter)) * ((h_theta - y).T * (h_theta - y))
+		cost = np.divide(1.0, (2.0 * n)) * ((h_theta - y).T * (h_theta - y))
 		return cost[0,0]
 	
 
