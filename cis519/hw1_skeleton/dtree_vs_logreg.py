@@ -126,7 +126,7 @@ def evaluatePerformance(numTrials = 1000):
     plt.plot(percent_array,plot_tree, 'bx',label ='Decision Tree')
     plt.legend(loc='lower right')
     plt.savefig('learningcurve.png')
-    plt.show()
+    #plt.show()
     
 
     return stats
@@ -138,7 +138,7 @@ def evaluatePerformance(numTrials = 1000):
 # Do not modify from HERE...
 if __name__ == "__main__":
     
-    stats = evaluatePerformance(100)
+    stats = evaluatePerformance()
     print "Decision Tree Accuracy = ", stats[0,0], " (", stats[0,1], ")"
     print "Logistic Reg. Accuracy = ", stats[1,0], " (", stats[1,1], ")"
 # ...to HERE.
