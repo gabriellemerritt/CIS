@@ -55,8 +55,9 @@ $$
 
 \subsection {Decision Tree} 
 Draw the complete (unpruned) decision tree, showing the class predictions at the leaves. 
+\linebreak
 \includegraphics[width = \linewidth]{dTree_un.png}
-
+\linebreak
 
 \section{Linear Regression and kNN}
 
@@ -96,8 +97,8 @@ For general closed form solution for linear regression
  \section{Decision Trees and Linear Discriminants}
  Describe in detail how to modify a classic decision tree algorithm (ID3 / C4.5) to obtain oblique splits (i.e,
 splits that are not parallel to an axis).
-In order to obtain oblique splits for a decision tree algorithm such as ID3, or C4.5 instead of splitting at a single attribute, split on some function of that attribute or multiple attributes. 
-For example attribute x splits on >0, 
+In order to obtain oblique splits for a decision tree algorithm such as ID3, or C4.5 instead of creating a parallel axis split on a single real valued attribute. Oblique splits are obtained by a linear combination of real valued attributes. 
+Source: Kohavi, Ron, and Ross Quinlan. Decision Tree Discovery.  10 Oct. 1999. http://ai.stanford.edu/~ronnyk/treesHB.pdf
 
 \part{Programming Exercises Analysis}
 \section {Linear Regression} 
@@ -115,12 +116,10 @@ the figure above is for $ \lambda = .001$
 \paragraph{}
 \includegraphics[width = \linewidth]{Lambda_000001.png}
 the figure above is for $ \lambda = .000001$ 
-
- 
-
-
-
-
-
+\paragraph{}
+\section{Non linear Decision Surface}
+\includegraphics[width = \linewidth]{NLDS.png}
+\section{Learning Curve}
+\includegraphics[width =\linewidth]{learningcurve.png}
 
 \end{document}

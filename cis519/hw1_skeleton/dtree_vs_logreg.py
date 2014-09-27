@@ -9,7 +9,6 @@ import matplotlib.pyplot as plt
 from sklearn import tree
 from sklearn.metrics import accuracy_score
 from logreg import LogisticRegression 
-import time
 
 
 
@@ -62,10 +61,10 @@ def evaluatePerformance(numTrials = 1000):
     
     clf = tree.DecisionTreeClassifier()
     lr = LogisticRegression(alpha = 0.0000001, regLambda=0.001, epsilon=0.0001, maxNumIters = 10000)
-    test_instance = 1
-    start_time = time.time()
+    #test_instance = 1
+    #start_time = time.time()
     for i in xrange (numTrials): 
-        print (time.time() - start_time)
+        #print (time.time() - start_time)
         np.random.shuffle(idx)
         X = X[idx]
         y = y[idx]
@@ -108,7 +107,7 @@ def evaluatePerformance(numTrials = 1000):
     stats[0,1] = stddevDecisionTreeAccuracy
     stats[1,0] = meanLogisticRegressionAccuracy
     stats[1,1] = stddevLogisticRegressionAccuracy
-    end_time = time.time() 
+    #end_time = time.time() 
     plot_log= np.array(np.zeros((9,1)))
     plot_tree =np.array(np.zeros((9,1)))
     for q in xrange(9):
