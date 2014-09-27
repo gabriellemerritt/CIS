@@ -37,8 +37,9 @@ class LinearRegression:
 			print "Iteration: ", i+1, " Cost: ", self.JHist[i][0], " Theta: ", theta 
 			h_theta = X * theta 
 			for k in xrange(n):
-				for j in xrange(d):
-					theta[j] = theta[j] - ((self.alpha/(n)) * ((h_theta[k] - y[k]) * X[k,j]))
+				theta = theta - ( (self.alpha/n)*np.matrix((h_theta[k] - y[k])*X[k,:]).T)
+				# for j in xrange(d):
+				# 	theta[j] = theta[j] - ((self.alpha/(n)) * ((h_theta[k] - y[k]) * X[k,j]))
 									 
 
 

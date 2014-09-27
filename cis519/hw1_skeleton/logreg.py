@@ -21,18 +21,10 @@ class LogisticRegression:
         self.JHist = None
 
     def sigmoid (self, z):
+        # casting z* -1 to an array so that  ** function can properly handle 
         gz = np.array(-1.0*z)
         d = 1.0 + np.e**(gz)
         g_z = 1.0/d 
-        # n,d = z.shape 
-        # g_z = np.matrix(np.zeros((n,d)))
-        # for i in xrange(n):
-        #     for j in xrange(d):
-        #         gz = -z[i,j]
-        #         #g_z[i,j] = np.divide(1.0, (1.0+np.exp(gz)))
-        #         if (g_z[i,j] == 0):
-        #             g_z[i,j] =.00000001
-        # #print(g_z)
 
         return g_z
 
@@ -51,11 +43,7 @@ class LogisticRegression:
         '''
         n,d = X.shape
         h_theta = self.sigmoid((X * theta))
-        cost = 0
-
         cost = y.T*np.log(h_theta) + ((1 - y).T*np.log(1 -h_theta))
-        #for i in xrange(n):
-            #cost = y[i]*np.log(h_theta[i]) + ((1 - y[i])*(np.log(1-h_theta[i])))
         cost = -cost + regLambda*(np.linalg.norm(theta)*np.linalg.norm(theta)) 
 
         
@@ -77,29 +65,25 @@ class LogisticRegression:
         n,d = X.shape 
         old_theta = np.matrix(np.zeros((d,1)))
         self.JHist = []
+        # constant number thats alpha / number of rows i
         scaling = self.alpha/n
-        #h_theta = self.sigmoid((X*theta))
 
         for i in xrange(self.maxNumIters): 
             old_theta = np.copy(theta)
-            # self.JHist.append( (self.computeCost(theta,X,y, regLambda), theta) )
-            # print ("Iteration: ", i+1, " Cost: ", self.JHist[i][0], " Theta: ", theta )
             h_theta = self.sigmoid((X*theta))
-            #print "finsihed h_theta"
+            
             delt = h_theta - y 
-
+            # calculating theta 0 seprately from theta 1 - d
             for k in xrange(n):
-                #print k
-                theta[0] = theta[0] - (self.alpha * (delt[k]))
-                # for j in xrange(1,d):
-                #     theta[j] = theta[j]*(1- scaling*regLambda) - ((scaling) * (delt[k] * X[k,j])) 
-                theta[1:d] = theta[1:d]*(1- scaling*regLambda)-(scaling * np.matrix(delt[k] * X[k,1:d]).T)
+            
+                theta[0] = theta[0] - (self.alpha*(delt[k]))
+                theta[1:d] = theta[1:d]* (1 - (scaling*regLambda))-(scaling * np.matrix(delt[k]*X[k,1:d]).T)
 
         
-            
+            # if old theta == new theta stop running gradient decent 
             if(self.hasConverged(theta,old_theta) == True):
                 break 
-            #print ("iteration: %i",i)
+          
             
         return theta
 
@@ -123,14 +107,12 @@ class LogisticRegression:
         n,d = X.shape
         X = np.c_[np.ones((n,1)), X]
         n,d = X.shape
+        '''
+        If first time running generate random thetas
+        '''
         if (self.theta == None):
              self.theta = np.random.normal(0,.1,d) 
              self.theta = np.matrix(self.theta).T
-        #self.theta = np.matrix(np.zeros((d,1)))
-        #self.theta = np.random.normal(0,.1,d)
-        # for i in xrange(d):
-        #     self.theta[i] = np.random.normal(0,1)
-        #self.theta = np.matrix(self.theta).T
 
         self.theta = self.computeGradient(self.theta, X, y , self.regLambda) 
 
@@ -144,19 +126,19 @@ class LogisticRegression:
         Returns:
             an n-dimensional numpy vector of the predictions
         '''
+        #adding 1's column to X matrix 
         n,d = X.shape
         X = np.c_[np.ones((n,1)), X]
         n,d = X.shape
         
         h_theta = self.sigmoid((X * self.theta))
         n,d = h_theta.shape
+        # creating a threshold for predition so labels only have two classes 
         for i in xrange(n):
-        #     # if (h_theta[i] >= .45):
-        #     #     h_theta[i] = 1
-        #     # else:
-        #     #     h_theta[i] = 0
-            h_theta[i] = np.around(h_theta[i])
+            if (h_theta[i] >= .5):
+                h_theta[i] = 1
+            else:
+                h_theta[i] = 0
 
-        #h_theta= np.squeeze(np.asarray(h_theta))
         return h_theta 
 

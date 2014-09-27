@@ -18,7 +18,7 @@ def mapFeature(x1, x2):
     '''
     n = x1.shape 
     map_x = np.matrix(np.zeros((n[0], 28)))  
-    print n[0] 
+    
     for i in xrange(n[0]):
         map_x[i,:] = expand(x1[i],x2[i])
     #map_x = np.squeeze(np.asarray(map_x))
@@ -27,6 +27,7 @@ def mapFeature(x1, x2):
 def expand(x1,x2):
     '''
     Returns row vector with 1  to x2^6 in each entry 
+    filling vector sections at a time, definately not the most efficient way to do this 
     '''
     power = 1
     power2 = 2
