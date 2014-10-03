@@ -154,7 +154,7 @@ def evaluatePerformance(numTrials = 1000):
 # Do not modify from HERE...
 if __name__ == "__main__":
     
-    stats = evaluatePerformance()
+    stats = evaluatePerformance(10)
     print "Decision Tree Accuracy = ", stats[0,0], " (", stats[0,1], ")"
     print "Logistic Reg. Accuracy = ", stats[1,0], " (", stats[1,1], ")"
 # ...to HERE.
