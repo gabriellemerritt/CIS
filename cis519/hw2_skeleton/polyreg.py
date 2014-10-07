@@ -16,7 +16,10 @@ class PolynomialRegression:
         '''
         Constructor
         '''
-        #TODO
+       	self.degree = degree
+		self.regLambda = regLambda
+		self.theta = None
+		self.JHist = None
 
 
     def polyfeatures(self, X, degree):
@@ -48,6 +51,7 @@ class PolynomialRegression:
                 You need to apply polynomial expansion and scaling
                 at first
         '''
+        
         #TODO
         
         
