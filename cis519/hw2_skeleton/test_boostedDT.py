@@ -15,13 +15,22 @@ from sklearn.metrics import accuracy_score
 
 from boostedDT import BoostedDT
 
-# load the data set
+#load the data set
 iris = datasets.load_iris()
 X = iris.data
 y = iris.target
+# filename = 'data/challengeTestUnlabeled.dat'  # this is the UCI ionosphere dataset
+# allData = np.loadtxt(filename, delimiter=',')
+# Xunl = allData[:,:]
+# # yunl = allData[:,-1]
+
+# filename = 'data/challengeTrainLabeled.dat'  # this is the UCI ionosphere dataset
+# allData = np.loadtxt(filename, delimiter=',')
+# X = allData[:,:-1]
+# y = allData[:,-1]
 
 n,d = X.shape
-nTrain = 0.5*n  #training on 50% of the data
+nTrain = 0.50*n  #training on 50% of the data
 
 # shuffle the data
 idx = np.arange(n)
@@ -54,3 +63,8 @@ accuracyBoostedDT = accuracy_score(ytest, ypred_BoostedDT)
 
 print "Decision Tree Accuracy = "+str(accuracyDT)
 print "Boosted Decision Tree Accuracy = "+str(accuracyBoostedDT)
+
+f = open('workfile', 'w')
+H_x =str(ypred_BoostedDT)
+f.write(H_x)
+
