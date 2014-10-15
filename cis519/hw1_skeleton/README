@@ -43,8 +43,10 @@ COURSE:  519
 
 SOURCESCONSULTED: |
     While completing the assignment, I consulted the following sources: 
-    Asked roommate about x_0, realized it was a vector and not a single value of 
-    x at 0   	
+    Asked roommate about x_0, realized it was a vector and not a single value of
+    x at 0. 
+    Dean helped me understand for cross validation you train and test on
+    k% of the folds before you reshuffle  	
 
 
  
@@ -85,11 +87,11 @@ LINREGIMPLEMENTATION_CLOSEDFORM: thetaClosedForm = linalg.inv((X.T*X))*X.T*y
 
 # Copy and paste your brief paragraph describing the effect of the regularization 
 # parameter from your PDF.
-LOGREGIMPLEMENTATION_REGULARIZATION_ANALYSIS:
- For my varied values of lambda I noticed that the larger lambda became the faster old  
- theta and new theta converged, and in cases for large lambdas ,the worse the  
- classifier worked. For small values of lambda the slower the gradient decent, without 
- much gain.  
+LOGREGIMPLEMENTATION_REGULARIZATION_ANALYSIS: |
+    For my varied values of lambda I noticed that the larger lambda became the faster old  
+    theta and new theta converged, and in cases for large lambdas ,the worse the  
+    classifier worked. For small values of lambda the slower the gradient decent, without 
+    much gain.  
  
  
  
