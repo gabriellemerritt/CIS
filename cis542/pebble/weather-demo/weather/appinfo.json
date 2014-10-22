@@ -1,0 +1,17 @@
+{
+  "uuid": "caa24afa-d444-4caa-a872-d30ec2a65523",
+  "shortName": "weather",
+  "longName": "weather",
+  "companyName": "MakeAwesomeHappen",
+  "versionCode": 1,
+  "versionLabel": "1.0",
+  "watchapp": {
+    "watchface": false
+  },
+  "appKeys": {
+    "dummy": 0
+  },
+  "resources": {
+    "media": []
+  }
+}
