@@ -21,13 +21,13 @@ from boostedDT import BoostedDT
 # y = iris.target
 filename = 'data/challengeTestUnlabeled.dat'  # this is the UCI ionosphere dataset
 allData = np.loadtxt(filename, delimiter=',')
-Xunl = allData[:,:]
+Xunl = allData[: , :]
 # yunl = allData[:,-1]
 
 filename = 'data/challengeTrainLabeled.dat'  # this is the UCI ionosphere dataset
 allData = np.loadtxt(filename, delimiter=',')
-X = allData[:,:-1]
-y = allData[:,-1]
+X = allData[: , :-1]
+y = allData[: , -1]
 
 n,d = X.shape
 nTrain = n  #training on 50% of the data
