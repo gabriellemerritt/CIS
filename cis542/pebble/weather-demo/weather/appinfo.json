@@ -1,17 +1,37 @@
 {
   "uuid": "caa24afa-d444-4caa-a872-d30ec2a65523",
-  "shortName": "weather",
-  "longName": "weather",
-  "companyName": "MakeAwesomeHappen",
+  "shortName": "Tutorial-3-3",
+  "longName": "Tutorial-3-3",
+  "companyName": "Pebble",
   "versionCode": 1,
   "versionLabel": "1.0",
   "watchapp": {
-    "watchface": false
+    "watchface": true
   },
   "appKeys": {
-    "dummy": 0
+    "KEY_TEMPERATURE": 0,
+    "KEY_CONDITIONS": 1
   },
+  "capabilities": [
+    "location"
+  ],
   "resources": {
-    "media": []
+    "media": [
+      {
+        "type":"font",
+        "name":"FONT_PERFECT_DOS_48",
+        "file":"perfect-dos-vga.ttf"
+      },
+      {
+        "type":"font",
+        "name":"FONT_PERFECT_DOS_20",
+        "file":"perfect-dos-vga.ttf"
+      },
+      {
+        "type":"png",
+        "name":"IMAGE_BACKGROUND",
+        "file":"background.png"
+      }
+    ]
   }
 }
