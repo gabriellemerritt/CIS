@@ -1,0 +1,1 @@
+[DEBUG][./src/weather.c:56] Done initializing, pushed window: 0x94a43b0

@@ -1,0 +1,74 @@
+{
+  "uuid": "ed70b15c-3c48-4828-8e8c-e39a28efb38d",
+  "shortName": "Tutorial-3-3",
+  "longName": "Tutorial-3-3",
+  "companyName": "Pebble",
+  "versionCode": 1,
+  "versionLabel": "1.0",
+  "watchapp": {
+    "watchface": true
+  },
+  "appKeys": {
+    "KEY_TEMPERATURE": 0,
+    "KEY_CONDITIONS": 1,
+    "Name": 2,
+    "Symbol": 3,
+    "LastPrice": 4,
+    "Change": 5,
+    "ChangePercent": 6
+  },
+
+  "capabilities": [
+    "location"
+  ],
+  "resources": {
+    "media": [
+      {
+        "type":"font",
+        "name":"FONT_PERFECT_DOS_48",
+        "file":"perfect-dos-vga.ttf"
+      },
+      {
+        "type":"font",
+        "name":"FONT_PERFECT_DOS_20",
+        "file":"perfect-dos-vga.ttf"
+      },
+      {
+        "type":"font", 
+        "name":"FONT_CNL_48",
+        "file":"champagneandlimos.ttf"
+      },
+      {
+        "type":"font", 
+        "name":"FONT_CNL_20",
+        "file":"champagneandlimos.ttf"
+      },
+      {
+        "type":"png",
+        "name":"IMAGE_BACKGROUND",
+        "file":"background.png"
+      },
+      {
+        "type":"png",
+        "name":"IMAGE_CLOUD",
+        "file":"cloud.png"
+      },
+      {
+        "type":"png",
+        "name":"IMAGE_SUN",
+        "file":"sun.png"
+      },
+      {
+        "type":"png",
+        "name":"IMAGE_SNOW",
+        "file":"snow.png"
+      },
+      {
+        "type":"png",
+        "name":"IMAGE_RAIN",
+        "file":"rain.png"
+      }
+
+    ]
+  }
+}

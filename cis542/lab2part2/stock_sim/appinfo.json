@@ -1,0 +1,35 @@
+{
+  "uuid": "ed70b15c-3c48-4828-8e8c-e39a28efb38d",
+  "shortName": "Tutorial-3-3",
+  "longName": "Tutorial-3-3",
+  "companyName": "Pebble",
+  "versionCode": 1,
+  "versionLabel": "1.0",
+  "watchapp": {
+    "watchface": true
+  },
+  "appKeys": {
+    "Symbol": 0,
+    "LastPrice": 1,
+    "ChangePercent": 2
+  },
+
+  "capabilities": [
+    "location"
+  ],
+  "resources": {
+    "media": [
+      {
+        "type":"font", 
+        "name":"FONT_CNL_10",
+        "file":"cnl.ttf"
+      },
+      {
+        "type":"font", 
+        "name":"FONT_CNL_20",
+        "file":"cnl.ttf"
+      }
+     
+    ]
+  }
+}
