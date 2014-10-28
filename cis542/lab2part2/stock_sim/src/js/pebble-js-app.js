@@ -18,26 +18,28 @@ function retrieveStock(stock,firstMsg) {
 	//send stock request to markit ondemand 
 	xhrRequest(url, 'GET',
 		function(responseText){
+			// scan json and load in data into these variables
 			var json = JSON.parse(responseText); 
-			var stockName = json.Data.Name; 
-			var stockSymbol = json.Data.Symbol;
-			var LastPrice = Math.round(json.Data.LastPrice);
-			var stockChange = Math.round(json.Data.Change);
-			var changePercent = Math.round(json.Data.ChangePercent); 
+			var stockName = json.Name; 
+			var stockSymbol = json.Symbol;
+			var LastPrice = Math.round(json.LastPrice);
+			var stockChange = Math.round(json.Change);
+			var changePercent = Math.round(json.ChangePercent); 
 			console.log("Last price is" + LastPrice);
 			console.log("Change in percent since yesterday"+ changePercent);
-
+			// create a dictionary that contains symbol, current price, and change in percent
 			var stockDictionary = { 
-				"Symbol": stockSymbol 
-				"LastPrice": lastPrice
+				"Symbol": stockSymbol, 
+				"LastPrice": LastPrice,
 				"ChangePercent": changePercent
 
 			};
+			// hardcode stock to microsoft if there is no previous symbol
 			if (firstMsg){
 				stockDictionary.stockSymbol = symbol;
 				
 			}
-			// send to pebs 
+			// send to pebble  
 			Pebble.sendAppMessage(stockDictionary, 
 				function(e){
 					console.log("Stock info sent to pebble successfully!");
@@ -76,21 +78,9 @@ Pebble.addEventListener('ready',
 Pebble.addEventListener('appmessage',
   function(e) {
     console.log("AppMessage received!");
- //    var firstMsg;
-	// if (e.payload.init) 
-	// {
-	//     firstMsg = true;
-	//     retrieveStock(symbol,firstMsg);
-	// }
-	//   else if (e.payload.fetch) {
-	//     firstMsg = false;
-	//     retrieveStock(symbol,firstMsg);
-	//   }
-	//   else if 
-	    e.payload.symbol
-	    symbol = e.payload.symbol;
-	    localStorage.setItem("symbol", symbol);
-	    firstMsg = false;
-	    retrieveStock(symbol,firstMsg);
+	    // symbol = e.payload.symbol; // load the symbol from dictionary
+	    // localStorage.setItem("symbol", symbol); // store the symbol
+	    // firstMsg = false;  // we have recieved amessage so we dont have to hardcode symbol
+	    retrieveStock(symbol,true);
 	  
   });

@@ -1,7 +1,7 @@
 {
-  "uuid": "ed70b15c-3c48-4828-8e8c-e39a28efb38d",
-  "shortName": "Tutorial-3-3",
-  "longName": "Tutorial-3-3",
+  "uuid": "655bb6eb-42ae-4795-aaaa-e679cd96bd6e",
+  "shortName": "stock sim",
+  "longName": "Stock Retrieval",
   "companyName": "Pebble",
   "versionCode": 1,
   "versionLabel": "1.0",
@@ -14,9 +14,6 @@
     "ChangePercent": 2
   },
 
-  "capabilities": [
-    "location"
-  ],
   "resources": {
     "media": [
       {
@@ -25,11 +22,21 @@
         "file":"cnl.ttf"
       },
       {
-        "type":"font", 
-        "name":"FONT_CNL_20",
-        "file":"cnl.ttf"
+	"type":"png",
+	"name":"IMAGE_BACKGROUND",
+	"file":"background.png"
+     },
+     {
+        "type":"png",
+        "name":"IMAGE_DOWN",
+        "file":"down.png"
+      },
+      {
+        "type":"png",
+        "name":"IMAGE_UP",
+        "file":"up.png"
       }
-     
+
     ]
   }
 }
