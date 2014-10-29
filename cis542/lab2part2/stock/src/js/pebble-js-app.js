@@ -1,6 +1,7 @@
 // setting default symbol for first time look up 
 var defaultSymbol = "AAPL";
-var symbol = defaultSymbol;
+var Symbol = defaultSymbol;
+var click = 0; 
 
 var xhrRequest = function (url, type, callback) {
   var xhr = new XMLHttpRequest();
@@ -22,9 +23,10 @@ function retrieveStock(stock,firstMsg) {
 			var json = JSON.parse(responseText); 
 			var stockName = json.Name; 
 			var stockSymbol = json.Symbol;
-			var LastPrice = Math.round(json.LastPrice);
-			var stockChange = Math.round(json.Change);
-			var changePercent = Math.round(json.ChangePercent); 
+			var LastPrice = Math.round(json.LastPrice * 100);
+			var stockChange = Math.round(json.Change *100)/100;
+			var changePercent = Math.round(json.ChangePercent *100); 
+			console.log(stockSymbol);
 			console.log("Last price is" + LastPrice);
 			console.log("Change in percent since yesterday"+ changePercent);
 			// create a dictionary that contains symbol, current price, and change in percent
@@ -32,13 +34,12 @@ function retrieveStock(stock,firstMsg) {
 				"Symbol": stockSymbol, 
 				"LastPrice": LastPrice,
 				"ChangePercent": changePercent
-
 			};
 			// hardcode stock to microsoft if there is no previous symbol
-			if (firstMsg){
-				stockDictionary.stockSymbol = symbol;
+			// if (firstMsg){
+			// 	stockDictionary.stockSymbol = symbol;
 				
-			}
+			// }
 			// send to pebble  
 			Pebble.sendAppMessage(stockDictionary, 
 				function(e){
@@ -67,10 +68,10 @@ Pebble.addEventListener('ready',
   function(e) {
     console.log("PebbleKit JS ready!");
     //Get Apple Stock
-    symbol = localStorage.getItem("symbol");
-    if (!symbol) { symbol = "AAPL";}
+    console.log("what symbol is from local storage " + Symbol);
+    if (!Symbol) { Symbol = "AAPL";}
     var firstMsg = true;
-    retrieveStock(symbol,firstMsg); 
+    retrieveStock(Symbol,firstMsg); 
   }
 );
 
@@ -78,9 +79,18 @@ Pebble.addEventListener('ready',
 Pebble.addEventListener('appmessage',
   function(e) {
     console.log("AppMessage received!");
+    // variable to record how many times i've clicked select
 	    // symbol = e.payload.symbol; // load the symbol from dictionary
 	    // localStorage.setItem("symbol", symbol); // store the symbol
 	    // firstMsg = false;  // we have recieved amessage so we dont have to hardcode symbol
-	    retrieveStock(symbol,true);
-	  
-  });
+	    //Symbol = window.e.payload[100];
+	    if ((click % 2) ==0 ) { Symbol = "GOOG";}
+	    else { Symbol = "AAPL";}
+	    console.log("what symbol is from local storage " + Symbol);
+	    console.log(click); 
+	    
+	    retrieveStock(Symbol,true);
+	click = click +1; 
+	if (click > 100){click = 1;}
+	}
+  );

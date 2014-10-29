@@ -11,22 +11,24 @@
   "appKeys": {
     "Symbol": 0,
     "LastPrice": 1,
-    "ChangePercent": 2
+    "ChangePercent": 2, 
+    "GOOG": 100, 
+    "MSFT": 101
   },
 
   "resources": {
     "media": [
       {
         "type":"font", 
-        "name":"FONT_CNL_10",
+        "name":"FONT_CNL_20",
         "file":"cnl.ttf"
       },
       {
-	"type":"png",
-	"name":"IMAGE_BACKGROUND",
-	"file":"background.png"
-     },
-     {
+        "type":"png",
+        "name":"IMAGE_BACKGROUND",
+        "file":"background.png"
+      },
+      {
         "type":"png",
         "name":"IMAGE_DOWN",
         "file":"down.png"
