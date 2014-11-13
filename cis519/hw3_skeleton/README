@@ -26,13 +26,13 @@
 #######################################################################################
 
 # Personal information  (BE SURE TO CHANGE THIS!)
-FIRSTNAME: Eric
-LASTNAME:  Eaton
-PENNKEY:   eeaton
-PENNID:    123456
+FIRSTNAME: Gabrielle
+LASTNAME:  Merritt
+PENNKEY:   gmerritt
+PENNID:    40102484
 
 # Which course are you enrolled in?  (enter 419 or 519)
-COURSE:  419 
+COURSE:  519 
 
 
 # List all sources of help that you consulted while completing this assignment 
@@ -57,7 +57,7 @@ SOURCESCONSULTED: |
 #######################################################################################
 
 # Problem 1b: what is the threshold for the loss matrix?  (only your final numeric answer)
-PROB_PROBDECISIONBOUNDARY_THRESHOLD: 123.45
+PROB_PROBDECISIONBOUNDARY_THRESHOLD: .333333333333
 
 
 
@@ -68,16 +68,16 @@ PROB_PROBDECISIONBOUNDARY_THRESHOLD: 123.45
 #######################################################################################
 
 # Problem 2a: what is the expected error rate for only X1?  (only your final numeric answer)
-PROB_DOUBLECOUNTINGEVIDENCE_ERRORX1: 123.45
+PROB_DOUBLECOUNTINGEVIDENCE_ERRORX1: .25
 
 # Problem 2a: what is the expected error rate for only X2?  (only your final numeric answer)
-PROB_DOUBLECOUNTINGEVIDENCE_ERRORX2: 123.45
+PROB_DOUBLECOUNTINGEVIDENCE_ERRORX2: .3
 
 # Problem 2c: what is the expected error rate adding X3?  (only your final numeric answer)
-PROB_DOUBLECOUNTINGEVIDENCE_ERRORWITHX3: 123.45
+PROB_DOUBLECOUNTINGEVIDENCE_ERRORWITHX3: .13
 
 # Problem 2e: does logistic regression suffer from the same problem?  (answer either YES or NO)
-PROB_DOUBLECOUNTINGEVIDENCE_LOGREGPROBLEM: MAYBE
+PROB_DOUBLECOUNTINGEVIDENCE_LOGREGPROBLEM: YES
 
 
 
@@ -90,17 +90,16 @@ PROB_DOUBLECOUNTINGEVIDENCE_LOGREGPROBLEM: MAYBE
 #######################################################################################
 
 # Problem 3a: which decision minimizes expected loss?  (enter only 0 or 1)
-PROB_REJECTOPTION_P20: 9
+PROB_REJECTOPTION_P20: 0
 
 # Problem 3b: which decision minimizes expected loss?  (enter only 0 or 1)
-PROB_REJECTOPTION_P40: 9
+PROB_REJECTOPTION_P40: 0
 
 # Problem 3d: what is the threshold for theta_0?  (only your final numeric answer)
-PROB_REJECTOPTION_THETA0: 123.45
+PROB_REJECTOPTION_THETA0: .3
 
 # Problem 3d: what is the threshold for theta_1?  (only your final numeric answer)
-PROB_REJECTOPTION_THETA1: 123.45
-
+PROB_REJECTOPTION_THETA1: .45
 
 
 
@@ -109,25 +108,32 @@ PROB_REJECTOPTION_THETA1: 123.45
 #######################################################################################
 
 # What was the training accuracy?
-TEXT20NEWS_ACCURACY_TRAIN: 123.45
+TEXT20NEWS_ACCURACY_TRAIN_NB: 123.45
+TEXT20NEWS_ACCURACY_TRAIN_SVM: 123.45
 
 # What was the testing accuracy?
-TEXT20NEWS_ACCURACY_TEST: 123.45
+TEXT20NEWS_ACCURACY_TEST_NB: 123.45
+TEXT20NEWS_ACCURACY_TEST_SVM: 123.45
 
 # What was the training precision?
-TEXT20NEWS_PRECISION_TRAIN: 123.45
+TEXT20NEWS_PRECISION_TRAIN_NB: 123.45
+TEXT20NEWS_PRECISION_TRAIN_SVM: 123.45
 
 # What was the testing precision?
-TEXT20NEWS_PRECISION_TEST: 123.45
+TEXT20NEWS_PRECISION_TEST_NB: 123.45
+TEXT20NEWS_PRECISION_TEST_SVM: 123.45
 
 # What was the training recall?
-TEXT20NEWS_RECALL_TRAIN: 123.45
+TEXT20NEWS_RECALL_TRAIN_NB: 123.45
+TEXT20NEWS_RECALL_TRAIN_SVM: 123.45
 
 # What was the testing recall?
-TEXT20NEWS_RECALL_TEST: 123.45
+TEXT20NEWS_RECALL_TEST_NB: 123.45
+TEXT20NEWS_RECALL_TEST_SVM: 123.45
 
 # What was the training time (in seconds)?
-TEXT20NEWS_TIME_TRAIN: 123.45
+TEXT20NEWS_TIME_TRAIN_NB: 123.45
+TEXT20NEWS_TIME_TRAIN_SVM: 123.45
 
 # Which classifier performed better overall?  (answer either NAIVEBAYES or SVM -- you can choose only one)
 TEXT20NEWS_BESTCLASSIFIER: UNKNOWN
@@ -163,5 +169,5 @@ FEEDBACK_ERRORS: |
  
 # Please describe any problems you encountered while completing this assignment
 FEEDBACK_PROBLEMS: |
-    None
+    Scipy cannot run tfidf_transformer.fit_transform() function. There seems to be a bug
     

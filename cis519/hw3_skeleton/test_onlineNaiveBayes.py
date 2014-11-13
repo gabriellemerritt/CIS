@@ -21,8 +21,8 @@ dataset = datasets.load_digits()
 X = dataset.data
 y = dataset.target
 
-n,d = X.shape
-nTrain = int(0.5*n)  #training on 50% of the data
+n, d = X.shape
+nTrain = int(0.5*n)  # training on 50% of the data
 
 # shuffle the data
 idx = np.arange(n)
@@ -32,19 +32,19 @@ X = X[idx]
 y = y[idx]
 
 # split the data
-Xtrain = X[:nTrain,:]
+Xtrain = X[:nTrain, :]
 ytrain = y[:nTrain]
-Xtest = X[nTrain:,:]
+Xtest = X[nTrain:, :]
 ytest = y[nTrain:]
 
 # train the online naive Bayes
 modelONB = OnlineNaiveBayes(useLaplaceSmoothing=True)
 for i in range(nTrain):
-    modelONB.fit(Xtrain[i:i+1,:],ytrain[i:i+1])  # train two instances at a time
+    modelONB.fit(Xtrain[i:i+2, :], ytrain[i:i+2])  # train two instances at a time
 
 # train the boosted ONB
 modelNB = NaiveBayes(useLaplaceSmoothing=True)
-modelNB.fit(Xtrain,ytrain)
+modelNB.fit(Xtrain, ytrain)
 
 # output predictions on the remaining data
 ypred_ONB = modelONB.predict(Xtest)

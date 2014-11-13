@@ -1,24 +1,17 @@
-"""
-======================================================
-Test the naive Bayes against the standard decision tree
-======================================================
-
-Author: Eric Eaton, 2014
-
-"""
-print(__doc__)
 
 import numpy as np
 from sklearn import datasets
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score
-
-from naiveBayes import NaiveBayes
+from nn import NeuralNet
 
 # load the data set
-dataset = datasets.load_digits()
-X = dataset.data
-y = dataset.target
+filenameY = 'data/digitsY.dat'
+filenameX = 'data/digitsX.dat'
+Xdata = np.loadtxt(filenameX, delimiter=',')
+Ydata = np.loadtxt(filenameY, delimiter=',')
+X = Xdata
+y = Ydata
 
 n, d = X.shape
 nTrain = 0.5*n  #training on 50% of the data
@@ -41,16 +34,16 @@ modelDT = DecisionTreeClassifier()
 modelDT.fit(Xtrain, ytrain)
 
 # train the naive Bayes
-modelNB = NaiveBayes(useLaplaceSmoothing=True)
-modelNB.fit(Xtrain, ytrain)
+modelNN = NeuralNet(layers=2)
+modelNN.fit(Xtrain, ytrain)
 
 # output predictions on the remaining data
 ypred_DT = modelDT.predict(Xtest)
-ypred_NB = modelNB.predict(Xtest)
+ypred_NN= modelNN.predict(Xtest)
 
 # compute the training accuracy of the model
 accuracyDT = accuracy_score(ytest, ypred_DT)
-accuracyNB = accuracy_score(ytest, ypred_NB)
+accuracyNB = accuracy_score(ytest, ypred_NN)
 
 print "Decision Tree Accuracy = "+str(accuracyDT)
 print "Naive Bayes Accuracy = "+str(accuracyNB)

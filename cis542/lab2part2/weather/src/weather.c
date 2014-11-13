@@ -2,11 +2,11 @@
   
 #define KEY_TEMPERATURE 0
 #define KEY_CONDITIONS 1
-  
+// making a window  and two text layers
 static Window *s_main_window;
 static TextLayer *s_time_layer;
 static TextLayer *s_weather_layer;
-
+// setting up fonts
 static GFont s_time_font;
 static GFont s_weather_font;
 
@@ -77,11 +77,7 @@ static void main_window_load(Window *window) {
   text_layer_set_font(s_weather_layer, s_weather_font);
   layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_weather_layer));
   
-  // weather picture layer 
-  // s_wbitmap = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_CLOUD);
-  // s_wlayer = bitmap_layer_create(GRect(72, 84, 144, 168));
-  // layer_add_child(window_get_root_layer(window),bitmap_layer_get_layer(s_wlayer));
- // Make sure the time is displayed from the start
+ 
   update_time();
 }
 
@@ -141,10 +137,12 @@ static void inbox_received_callback(DictionaryIterator *iterator, void *context)
       break;
     case KEY_CONDITIONS:
       snprintf(conditions_buffer, sizeof(conditions_buffer), "%s", t->value->cstring);
+      // after retrieving weather conditions comparing strings to 4 conditions and displaying appropriate graphic 
       if (strcmp(t->value->cstring, "Clouds") == 0)
       {
         if(s_wbitmap)
         {
+          //destroy previous picture
           gbitmap_destroy(s_wbitmap);
         }
 

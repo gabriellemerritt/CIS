@@ -57,51 +57,7 @@ function getWeather() {
     {timeout: 15000, maximumAge: 60000}
   );
 }
-// function stockSuccess(stock) {
-// 	var url = "http://dev.markitondemand.com/Api/v2/Quote?symbol="+stock;
-// 	//send stock request to markit ondemand 
-// 	xhrRequest(url, 'GET',
-// 		function(responseText){
-// 			var json = JSON.parse(responseText); 
-// 			var stockName = json.stock.stockName; 
-// 			var stockSymbol = json.main.stockSymbol;
-// 			var stockChange = json.main.stockChange;
-// 			var LastPrice = json.main.LastPrice;
-// 			console.log("Last price is" + LastPrice);
-// 			var changePercent = json.stock[0].main; 
-// 			console.log("Change in percent since yesterday"+ changePercent);
 
-// 			var stockDictionary = { 
-// 				"Name": stockName
-// 				"Symbol": stockSymbol 
-// 				"LastPrice": lastPrice
-// 				"Change": stockChange 
-// 				"ChangePercent": changePercent
-
-// 			};
-// 			// send to pebs 
-// 			Pebble.sendAppMessage(stockDictionary, 
-// 				function(e){
-// 					console.log("Stock info sent to pebble successfully!");
-// 				},
-// 				function(e){
-// 					console.log("Error Sending Stock data to pebble");
-// 				}
-// 			);
-// 		}
-// 	);	
-// }
-
-// function stockError(err) {
-//   console.log("Error requesting Stock!");
-// }
-
-
-
-// function getStock() { 
-// window.navigator.getStocks(Stockname, {timeout:15000});
-
-// }
 
 // Listen for when the watchface is opened
 Pebble.addEventListener('ready', 
@@ -110,7 +66,6 @@ Pebble.addEventListener('ready',
 
     // Get the initial weather
     getWeather();
-    //getStock(); 
   }
 );
 
@@ -119,6 +74,5 @@ Pebble.addEventListener('appmessage',
   function(e) {
     console.log("AppMessage received!");
     getWeather();
-    //getStock();
   }                     
 );
