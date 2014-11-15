@@ -111,7 +111,7 @@ class LogisticRegression:
         If first time running generate random thetas
         '''
         if (self.theta == None):
-             self.theta = np.random.normal(0,.1,d) 
+             self.theta = np.random.normal(0, .1, d)
              self.theta = np.matrix(self.theta).T
 
         self.theta = self.computeGradient(self.theta, X, y , self.regLambda) 

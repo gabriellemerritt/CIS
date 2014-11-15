@@ -34,16 +34,19 @@ modelDT = DecisionTreeClassifier()
 modelDT.fit(Xtrain, ytrain)
 
 # train the naive Bayes
-modelNN = NeuralNet(layers=2)
+layers = np.array(([25]))
+modelNN = NeuralNet(layers=layers, learningRate =2, numEpochs=500, epsilon=.62)
 modelNN.fit(Xtrain, ytrain)
+ypred_NNtrain = modelNN.predict(Xtrain)
 
 # output predictions on the remaining data
-ypred_DT = modelDT.predict(Xtest)
-ypred_NN= modelNN.predict(Xtest)
+ypred_NN = modelNN.predict(Xtest)
 
 # compute the training accuracy of the model
-accuracyDT = accuracy_score(ytest, ypred_DT)
-accuracyNB = accuracy_score(ytest, ypred_NN)
+accuracyNT = accuracy_score(ytrain, ypred_NNtrain)
+accuracyNN = accuracy_score(ytest, ypred_NN)
 
-print "Decision Tree Accuracy = "+str(accuracyDT)
-print "Naive Bayes Accuracy = "+str(accuracyNB)
+print "Training = "+str(accuracyNT)
+print "Neural Net accuracy = "+str(accuracyNN)
+modelNN.visualizeHiddenNodes("visualizeHiddenNodes.bmp")
+

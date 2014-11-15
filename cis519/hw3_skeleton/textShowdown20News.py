@@ -10,10 +10,6 @@ from sklearn.svm import SVC
 from sklearn.metrics.pairwise import cosine_similarity
 
 if __name__ == "__main__":
-    text_clf = Pipeline([('vect', CountVectorizer()),
-                        ('tfidf', TfidfTransformer()),
-                        ('Bclf', MultinomialNB())])
-
     twenty_train = fetch_20newsgroups(subset='train', shuffle=True)
     count_vect = CountVectorizer(stop_words='english', lowercase=True)
     X_train_counts = count_vect.fit_transform(twenty_train.data)
