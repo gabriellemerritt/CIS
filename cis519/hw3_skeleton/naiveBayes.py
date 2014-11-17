@@ -152,7 +152,7 @@ class OnlineNaiveBayes:
             # index = np.where(y == k)
             self.Nc = np.sum(X[index, :])
             if (self.useLaplaceSmoothing):
-                self.theta[k, :] = np.add(self.theta[k, :], ((np.sum(X[index], axis=0) + 1)/(self.Nc + d)))
+                self.theta[k, :] = np.add(self.theta[k, :], ((np.sum(X[index], axis=0) + 1.0)/(self.Nc + d)))
             else:
                 self.theta[k, :] = np.add(self.theta[k, :], ((np.sum(X[index], axis=0)) / (self.Nc)))
 
@@ -195,7 +195,7 @@ class OnlineNaiveBayes:
                 pred[i, k] = np.log(self.Py[k]) + np.sum(ans)
         mean = np.array(np.ones((n, self.K)))
         mean = mean * np.mean(pred)
-        pred = np.exp(pred + mean)
+        pred = np.exp(pred)
         for i in xrange(n):
             pred_prop[i, :] = pred[i, :] / np.sum(pred[i, :])
         return pred_prop
